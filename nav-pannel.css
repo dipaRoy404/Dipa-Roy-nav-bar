@@ -3,6 +3,20 @@
     src: url(/fonts/voyage-regular.otf);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+    user-select: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
 #nav-page {
     height: 100%;
     width: fit-content;
