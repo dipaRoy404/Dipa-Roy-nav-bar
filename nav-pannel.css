@@ -1,0 +1,166 @@
+@font-face {
+    font-family: voyage-regular;
+    src: url(/fonts/voyage-regular.otf);
+}
+
+#nav-page {
+    height: 100%;
+    width: fit-content;
+    position: absolute;
+    background-color: #111;
+    top: 0;
+    left: 0;
+}
+
+#nav-page::-webkit-scrollbar {
+    display: none;
+}
+
+#elem-div {
+    position: relative;
+    height: 100%;
+    width: fit-content;
+    background-color: #111;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+}
+
+#elem-div::-webkit-scrollbar {
+    display: none;
+}
+
+.elems {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    min-width: calc(100%/8);
+    width: 170px;
+}
+
+.elems:nth-child(1),
+.elems:nth-child(5),
+.elems:nth-child(9),
+.elems:nth-child(13),
+.elems:nth-child(17) {
+    border-right: 1px solid #a4a4a4;
+}
+
+.border {
+    height: 100%;
+    width: 0;
+    border-right: 1px solid #a4a4a4;
+}
+
+.elems h2 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 50px;
+    color: rgb(221, 221, 221);
+    margin-bottom: 30px;
+    white-space: nowrap;
+    font-family: voyage-regular;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+}
+
+.elems h2 span {
+    font-size: 50px;
+    color: rgb(173, 244, 255);
+    font-family: voyage-regular;
+}
+
+.elems p {
+    position: absolute;
+    bottom: 20px;
+    color: #ffff00;
+    opacity: 0.03;
+    font-size: 200px;
+    /* font-weight: 900; */
+    font-family: voyage-regular;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+#img-div {
+    position: absolute;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    /* transform: rotate(2deg); */
+    opacity: 0;
+    transition: height 0.5s, width 0.5s, opacity 0.5s, transform cubic-bezier(.19, 1, .22, 1) 0.4s;
+}
+
+
+
+@media (max-width: 600px) {
+    #nav-page {
+        height: 0;
+        width: fit-content;
+    }
+
+    #elem-div {
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        padding-right: 30px;
+        overflow-y: auto;
+        overflow-x: auto;
+        flex-direction: column;
+    }
+    
+    .elems {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        min-height: calc(100%/8);
+        height: 170px;
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    
+    .elems:nth-child(1),
+    .elems:nth-child(5),
+    .elems:nth-child(9),
+    .elems:nth-child(13),
+    .elems:nth-child(17) {
+        border-bottom: 1px solid #a4a4a4;
+        border-right: 0;
+    }
+    
+    .border {
+        width: 100%;
+        height: 0;
+        border-bottom: 1px solid #a4a4a4;
+        border-right: 0;
+    }
+    
+    .elems h2 {
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+        margin-left: 30px;
+        margin-bottom: 0;
+    }
+    
+    .elems p {
+        bottom: auto;
+        left: 20px;
+        color: #ffff00;
+        opacity: 0.03;
+        font-size: 200px;
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+    }
+}
